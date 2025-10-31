@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор візитівок</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Підключаємо бібліотеку для генерації PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Це контейнер, який буде перетворено в PDF -->
+    <div id="business-card">
+        <img src="logo.png" alt="Логотип" class="logo">
+        <div class="info">
+            <h1 id="name"></h1>
+            <p id="position"></p>
+            <hr>
+            <p id="phone"></p>
+            <p id="email"></p>
+        </div>
+    </div>
+
+    <button id="download-btn">Завантажити PDF</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

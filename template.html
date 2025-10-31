@@ -1,0 +1,29 @@
+<div style="
+  width:90mm;
+  height:50mm;
+  padding:10mm;
+  box-sizing:border-box;
+  background-color:#ffffff;
+  font-family:'e-Ukraine',sans-serif;
+  color:#002855;
+  position:relative;
+  border:1px solid #ccc;
+">
+  <!-- логотип -->
+  <img src='logo.svg' alt='Logo' style="position:absolute;top:8mm;right:8mm;width:20mm;opacity:0.8;">
+
+  <!-- текстові поля -->
+  <div style="font-size:14pt;font-weight:700;">{{name}}</div>
+  <div style="font-size:10pt;margin-top:2mm;">{{position}}</div>
+  <div style="font-size:9pt;margin-top:1mm;">{{department}}</div>
+
+  <div style="font-size:8pt;margin-top:6mm;">
+    <div>{{email}}</div>
+    <div>{{phone}}</div>
+  </div>
+
+  <!-- QR -->
+  <div style="position:absolute;bottom:6mm;right:8mm;width:18mm;height:18mm;">
+    {{qr}}
+  </div>
+</div>

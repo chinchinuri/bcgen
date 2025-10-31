@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Генератор візитівок</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Підключаємо бібліотеку для генерації PDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Генератор візитівок ДССЗЗІ</title>
+  <link href="https://fonts.cdnfonts.com/css/e-ukraine" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: 'e-Ukraine', sans-serif;
+      background: #f7f9fb;
+      padding: 40px;
+      color: #002855;
+    }
+    form {
+      max-width: 400px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    label { display: block; margin-top: 10px; font-weight: 500; }
+    input, textarea {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #002855;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #preview {
+      margin-top: 30px;
+      width: 350px;
+      height: 200px;
+      border: 1px solid #ccc;
+      background: white;
+    }
+  </style>
 </head>
 <body>
-    <!-- Це контейнер, який буде перетворено в PDF -->
-    <div id="business-card">
-        <img src="logo.png" alt="Логотип" class="logo">
-        <div class="info">
-            <h1 id="name"></h1>
-            <p id="position"></p>
-            <hr>
-            <p id="phone"></p>
-            <p id="email"></p>
-        </div>
-    </div>
 
-    <button id="download-btn">Завантажити PDF</button>
+<h2>Генератор візитівок ДССЗЗІ</h2>
 
-    <script src="script.js"></script>
+<form id="cardForm">
+  <label>Ім’я та прізвище</label>
+  <input name="name" placeholder="Володимир Карташов" required>
+
+  <label>Посада</label>
+  <input name="position" placeholder="Заступник директора департаменту" required>
+
+  <label>Підрозділ / напрям</label>
+  <input name="department" placeholder="Управління держконтролю у сфері КЗІ">
+
+  <label>Email</label>
+  <input name="email" placeholder="v.kartashov@cip.gov.ua">
+
+  <label>Телефон</label>
+  <input name="phone" placeholder="+380 44 281 8777">
+
+  <label>QR-код (SVG)</label>
+  <textarea name="qr" rows="4" placeholder='<svg>...</svg>'></textarea>
+
+  <button type="submit">Створити PDF</button>
+</form>
+
+<iframe id="preview"></iframe>
+
 </body>
 </html>
